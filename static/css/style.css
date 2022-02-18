@@ -1,0 +1,77 @@
+html,
+body {
+    margin: 0;
+    font-size: 100%;
+    background: url(../img/main_bg.jpg);
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body a {
+    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="email"],
+input[type="search"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* ---HEADER---*/
+.bg_yellow{
+    background-image: url(../img/header_bg.jpeg) !important;
+    height: 252px;
+    padding-top: 30px;
+}
+.nav{
+    padding-left: 200px;
+}
+.nav-link{
+    color: teal;
+    padding: 0 25px;
+}
+.logo-color{
+    color: teal;
+}
+.btn-outline-light{
+    color: teal;
+    border-color: teal;
+}
+.btn:hover{
+
+    background: none;
+    color: #fff;
+}
+.btn{
+    margin-left: 20px;
+}
+/* ---HEADER END---*/
+/* ---MAIN SECTION---*/
+.margint-top{
+    margin-top: -70px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+/* ---MAIN SECTION END---*/
+
+
+
+footer{
+    background: #fff;
+}
