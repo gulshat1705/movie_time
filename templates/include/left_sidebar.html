@@ -1,0 +1,40 @@
+<section class="ab-info-main">
+    <h4 class="left-item  title" >Поиск фильма</h4>
+    <div class="left-item search-bar">
+        <h4 class="simple-title" >По названию фильма</h4>
+        <form action="#" method="get" class="d-flex editContent" >
+            <input type="search" placeholder="Введите название..." name="q" class="form-control" required="">
+            <button type="submit" class="btn1 btn" >
+                <span class="fa fa-search" aria-hidden="true" ></span>
+            </button>
+        </form>
+    </div>
+    <div class="left-item">
+        <form action="#" method="get">
+            <div class="left-side my-4">
+                <h4 class="simple-title" >По жанрам</h4>
+                <ul class="w3layouts-box-list">
+                    
+                    <li class="editContent" >
+                        <input type="checkbox" class="checked" name="genre" value="{{ genre.id }}">
+                        <span class="span editContent" >genre name</span>
+                    </li>     
+                                                
+                </ul>
+            </div>
+        
+            <div class="left-side">
+                <h4 class="simple-title" >Год</h4>
+                <ul class="w3layouts-box-list">
+                    
+                    <li class="editContent" >
+                        <input type="checkbox" class="checked" name="year" value="{{ movie.year }}">
+                        <span class="span editContent" >year</span>
+                    </li> 
+                                                
+                </ul>
+            </div>
+            <button type="submit" class="main-btn">search</button>
+        </form> 
+    </div>    
+</section>

@@ -12,11 +12,25 @@
 </head>
 <body>
     {% include 'include/header.html' %}
-    <div class="container margint-top">
-        {% block content %}
-
-        {% endblock %}        
-    </div>   
+    <div class="main-bg">
+        <div class="container">
+            <div class="d-flex">
+                <div class="section left-radius">
+                    {% include 'include/left_sidebar.html' %}
+                </div>
+                <div class=" section section-main">
+                    {% block content %}
+                    {% endblock %} 
+                </div>    
+                <div class="section right-radius"> 
+                    {% include 'include/right_sidebar.html' %}
+                </div>    
+            </div>      
+        </div> 
+        <div class="grid-img-right mt-4 text-right bg bg1" >
+            include 'include/pagination.html' 
+        </div>
+    </div>      
     {% include 'include/footer.html' %} 
 </body>
 </html>
