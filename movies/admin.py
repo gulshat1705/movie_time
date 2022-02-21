@@ -131,15 +131,17 @@ class MovieShotsAdmin(admin.ModelAdmin):
     readonly_fields = ('get_image', )
 
     def get_image(self, obj):
-       return mark_safe(f'<img src={obj.image.url} width="50" heght="60" ')
+       return mark_safe(f'<img src={obj.image.url} width="50" heght="60">')
 
     get_image.short_description = 'Poster'
 
 
 @admin.register(Actor)
 class ActorAdmin(admin.ModelAdmin):
-    list_display = ('id', 'first_name', 'last_name', 'get_image')                            ##### get_image добавляем имя метода
+    list_display = ('id', 'full_name', 'get_image')                            ##### get_image добавляем имя метода
     readonly_fields = ('get_image', )
+    list_display_links = ['id', 'full_name',] 
+    save_on_top = True 
     # отображение рисунка на админ панели 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.image.url} width="50" height="60">')               #!! from django.utils.safestring import mark_safe

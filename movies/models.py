@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 
 class Category(models.Model):
@@ -18,18 +19,33 @@ class Category(models.Model):
 
 
 class Actor(models.Model):
-    first_name = models.CharField('Имя', max_length=100)
-    last_name = models.CharField('Имя',max_length=100)
-    age = models.PositiveSmallIntegerField('Возраст', default=0, blank=True, null=True)
+    full_name = models.CharField('Полное имя', max_length=100)
+    #last_name = models.CharField('фамилия', max_length=100)
+    birth_date = models.DateField('Дата рождения', blank=True, null=True)
     description = models.TextField('Описание', blank=True, null=True)
     image = models.ImageField('Фото', upload_to='actors/', blank=True, null=True)
 
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.full_name}'
 
     def get_absolute_url(self):
-        return reverse('actor_detail', kwargs={'slug': f'{self.first_name} {self.last_name}'})
+        return reverse('actor_detail', kwargs={'slug': f'{self.full_name}'})
+
+
+    def calculate_age(self):
+        today = date.today()
+
+        try: 
+            birthday = self.birth_date.replace(year=today.year)
+        # raised when birth date is February 29 and the current year is not a leap year
+        except ValueError:
+            birthday = self.birth_date.replace(year=today.year, day=today.day-1)
+
+        if birthday > today:
+            return today.year - self.birth_date.year - 1
+        else:
+            return today.year - self.birth_date.year
 
 
     class Meta:
@@ -61,6 +77,7 @@ class Movie(models.Model):
     country = models.CharField(max_length=150)
     directors = models.ManyToManyField(Actor, related_name='film_director')
     actors = models.ManyToManyField(Actor, related_name='film_actor')
+    
     genres = models.ManyToManyField(Genre)
     world_premiere = models.DateField('Мировая премьера', blank=True, null=True )     #default=date.today
     budget = models.PositiveIntegerField('Бюджет', default=0, help_text='Укажите сумму в долларах')
