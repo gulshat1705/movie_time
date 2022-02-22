@@ -134,6 +134,9 @@ footer{
 .footer-items{
     padding-left: 40px;
 }
+.nav-footer .nav-link:hover{
+    color: teal !important;
+}
 .contacts{
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -141,7 +144,21 @@ footer{
 .footer-items.email{
     padding-top: 45px;
 }
-.footer-items.email  h5{
+.teal-title{
     font-weight: bold;
     color: teal;
+}
+.btn_subscibe{
+    background: teal;
+    color: #fff;
+}
+.btn_subscibe:hover{
+    background-color: #F7A805;
+    border: 1px solid teal;
+}
+.movie{
+    text-align: center;
+}
+.movie .simple-title{
+    text-align: center;
 }

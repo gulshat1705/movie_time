@@ -1,9 +1,9 @@
 <form action="{% url 'subscriptions' %}" method="post" class="">
     {% csrf_token %}
-    <h5>Подпишитесь на нашу рассылку</h5>
+    <h5 class="teal-title">Подпишитесь на нашу рассылку</h5>
     <p>Подписавшись на наш список рассылки, вы всегда будете получать от нас последние новости и обновления.</p>
     <div class="d-flex w-100 gap-2">
       {{ subscriptions_form }}
-      <button class="btn btn-primary" type="submit">Подписаться</button>
+      <button class="btn btn_subscibe" type="submit">Подписаться</button>
     </div>
   </form>

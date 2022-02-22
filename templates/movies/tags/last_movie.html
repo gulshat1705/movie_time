@@ -1,0 +1,16 @@
+{% for movie in last_movies %}
+<div class="movie">
+    <a href="TODO потом добавить:movie.get_absolute_url" class="">    
+        <div class="">
+            <img src="{{ movie.poster.url }}" class="img-fluid" alt="{{ movie.title }}">
+        </div>
+        <div class="img-deal1">
+            <h3 class="simple-title">{{ movie.title }}</h3>
+            <p class="text-muted">{{ movie.year }}, {{ movie.genres }}</p>
+            <p>{{ movie.category }}</p>
+        </div>
+    </a>    
+</div>
+{% endfor %}
+
+          
