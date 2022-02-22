@@ -76,13 +76,12 @@ class Movie(models.Model):
     year = models.PositiveSmallIntegerField('Дата выхода', default='2022')
     country = models.CharField(max_length=150)
     directors = models.ManyToManyField(Actor, related_name='film_director')
-    actors = models.ManyToManyField(Actor, related_name='film_actor')
-    
+    actors = models.ManyToManyField(Actor, related_name='film_actor')    
     genres = models.ManyToManyField(Genre)
     world_premiere = models.DateField('Мировая премьера', blank=True, null=True )     #default=date.today
     budget = models.PositiveIntegerField('Бюджет', default=0, help_text='Укажите сумму в долларах')
-    fees_in_usa = models.PositiveIntegerField('Сборы_в_США', default=0, help_text='Укажите сумму в долларах')
-    fees_in_world = models.PositiveIntegerField('Сборы_в_США', default=0, help_text='Укажите сумму в долларах')
+    fees_in_usa = models.PositiveIntegerField('Сборы_в_США',blank=True, null=True, default=0, help_text='Укажите сумму в долларах')
+    fees_in_world = models.PositiveIntegerField('Сборы_в_США', blank=True, null=True, default=0, help_text='Укажите сумму в долларах')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     url = models.SlugField(max_length=160, unique=True)
     draft = models.BooleanField(default=False)
@@ -115,9 +114,9 @@ class MovieShots(models.Model):
     def __str__(self):
         return self.title
 
-
-    verbose_name = 'Кадры из фильма'
-    verbose_name_plural = 'Кадры из фильма'     
+    class Meta:
+        verbose_name = 'Кадры из фильма'
+        verbose_name_plural = 'Кадры из фильма'     
 
 
 class RatingStar(models.Model):

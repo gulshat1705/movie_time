@@ -1,59 +1,41 @@
-    <footer class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-2">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+{% load subscriptions_tags %}
+<footer class="py-5">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-2 footer-items">
+        <h5>Меню</h5>
+        <ul class="nav-footer flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Главная</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link p-0 text-muted dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Жанры
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Боевик</a></li>                
             </ul>
-          </div>
-    
-          <div class="col-2">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-            </ul>
-          </div>
-    
-          <div class="col-2">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-            </ul>
-          </div>
-    
-          <div class="col-4 offset-1">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of whats new and exciting from us.</p>
-              <div class="d-flex w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                <button class="btn btn-primary" type="button">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-    
-        <div class="d-flex justify-content-between py-4 my-4 border-top">
-          <p>© 2021 Company, Inc. All rights reserved.</p>
-          <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
-        </div>
-      </div>  
-    </footer>
+          </li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">О нас</a></li>
+        </ul>
+      </div>
+
+      <div class="col-4 footer-items contacts">
+        <h5>Контакты</h5>
+        <ul class="nav-footer flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><span class="social-icon phone"></span> 0771 67 67 51</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><span class="social-icon whatsapp"></span>0771 67 67 51</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><span class="social-icon instagram"></span>garkytbekova</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><span class="social-icon facebook"></span>arkytbekova@mail.ru</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><span class="social-icon telegram"></span>g_arkytbekova</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><span class="social-icon linkedin"></span>Гулшат Аркытбекова</a></li>
+        </ul>
+      </div>
+
+      <div class="col-5 footer-items email">
+        {% subscriptions_form %}
+      </div>
+    </div>    
+    <div class="d-flex justify-content-between py-4 my-4 border-top">
+      <p class="text-muted">© 2021 Company, Inc. All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
