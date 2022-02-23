@@ -66,17 +66,17 @@ input[type="search"] {
 }
 .section{
     font-size: 14px;
-    background: #fff;
-    padding: 20px;
     width: 25%;    
 }
-.left-radius{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.section-items{
+    background: #fff;
+    padding: 20px;
 }
-.right-radius{
+.left-top-radius{
+    border-top-left-radius: 10px;
+}
+.right-top-radius{
     border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 .section-main{
     width: 50%;
@@ -161,4 +161,7 @@ footer{
 }
 .movie .simple-title{
     text-align: center;
+}
+.img-deal1 p{
+    margin: 0;
 }

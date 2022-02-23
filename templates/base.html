@@ -15,15 +15,16 @@
     <div class="main-bg">
         <div class="container">
             <div class="d-flex">
-                <div class="section left-radius">
-                    {% include 'include/left_sidebar.html' %}
+                <div class="section left-radius">                    
+                    {% include 'include/left_sidebar.html' %}  
                 </div>
                 <div class=" section section-main">
                     {% block content %}
                     {% endblock %} 
                 </div>    
-                <div class="section right-radius"> 
+                <div class="section"> 
                     {% include 'include/right_sidebar.html' %}
+                </div>    
                 </div>    
             </div>      
         </div> 
